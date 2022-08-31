@@ -1,1 +1,3 @@
-pwd
+#!/bi/bash
+path=$(realpath "$BASH_SOURCE:-$0}")
+echo 'the absolute path is ' $path
