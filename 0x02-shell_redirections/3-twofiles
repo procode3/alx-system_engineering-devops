@@ -1,2 +1,2 @@
-#!/bin/bash \n
-more /etc/passwd /etc/hosts \n
+#!/bin/bash 
+more /etc/passwd /etc/hosts
