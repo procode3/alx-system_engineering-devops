@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -Fo 'bash' /etc/passwd |wc -l
+grep -o 'bash' /etc/passwd |wc -l
