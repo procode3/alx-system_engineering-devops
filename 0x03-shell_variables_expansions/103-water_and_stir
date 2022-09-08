@@ -1,2 +1,2 @@
 #!/bin/bash
-export bestchol '$((water#WATER)) +$((stir#STIR))'
+echo $(($water# $ WATER)) +$(($stir # $STIR))))
