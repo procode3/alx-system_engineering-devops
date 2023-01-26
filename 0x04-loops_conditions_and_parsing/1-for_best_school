@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-#print best school 10 times
+# Prints Best School 10 times
 
-num = 0
-
-for ((number; number < 10; number++))
+number=0
+for (( number=0 ; number<10 ; number++ ));
 do
-	echo "Best School"
-done
+        echo "Best School"
+done 
