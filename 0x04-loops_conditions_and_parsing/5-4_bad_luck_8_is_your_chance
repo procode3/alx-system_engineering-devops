@@ -7,7 +7,7 @@ while((num < 11))
 do
 	if [ $num -eq 4 ]
 	then
-		echo "Bad luck"
+		echo "bad luck"
 	elif [ $num -eq 8 ]
 	then
 		echo "good luck"
