@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+#Displaying time
+
+min=0
+hrs=0
+
+while [ $hrs -le 11 ]
+do
+	echo "$min"
+	if [ $min -eq 59 ]
+	then
+		((min = 0))
+		((hrs += 1))
+		echo "Hour: $hrs"
+	fi
+	((min++))
+done
+
