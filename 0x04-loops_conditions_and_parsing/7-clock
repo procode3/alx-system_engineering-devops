@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #Displaying time
 
-min=0
+min=1
 hrs=0
-
+echo "Hour: $hrs"
 while [ $hrs -le 11 ]
 do
 	echo "$min"
