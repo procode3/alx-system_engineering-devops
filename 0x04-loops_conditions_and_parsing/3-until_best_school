@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#untill loop 10 times
+
+number=0
+until [ $number == 10 ]
+do
+	echo "Best School"
+	((number ++))
+done
