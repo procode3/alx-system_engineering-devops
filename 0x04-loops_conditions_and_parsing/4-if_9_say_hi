@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#using while loop to prnt best school 10 times
+
+((num = 0))
+
+while((num < 9))
+do
+	if [ $num -eq 8 ]
+	then
+		echo "Best School"
+		echo "Hi"
+	fi
+	echo "Best School"
+	((num++))
+done
