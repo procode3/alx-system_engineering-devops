@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#Numbers from 1 - 20 with while and controlled by cases
+
+number=1
+
+while [ $number -le 20 ]
+do
+	echo $number
+	case $number in 4)
+		echo "bad luck from China"
+	esac
+	case $number in 9)
+		echo "bad luck from Japan"
+	esac
+	case $number in 17)
+		echo "bad luck from Italy"
+	esac
+	((number++))
+done
+
