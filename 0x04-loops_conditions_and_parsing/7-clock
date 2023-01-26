@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-#Displaying time
+# Prints a clock for 12 hours
 
-min=1
-hrs=0
-echo "Hour: $hrs"
-while [ $hrs -le 11 ]
+time=0
+hour=0
+min=0
+while [ $time -le 779 ]
 do
-	echo "$min"
-	if [ $min -eq 59 ]
-	then
-		((min = 0))
-		((hrs += 1))
-		echo "Hour: $hrs"
-	fi
-	((min++))
-done
-
+        if [ $(( time % 60 )) -ne 0 ]
+        then
+                ((min=time%60))
+                echo "$min"
+        else
+                echo "Hour: $hour"
+                ((hour++))
+        fi
+        ((time++))
+done 
