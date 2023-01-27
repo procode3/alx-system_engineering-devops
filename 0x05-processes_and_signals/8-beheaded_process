@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Terminate a process with SIGKILL Signal
+pid=$(pgrep -f "7-highlander")
+kill -SIGKILL "$pid"
