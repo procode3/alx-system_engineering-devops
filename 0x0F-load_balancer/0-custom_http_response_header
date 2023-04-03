@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Adding a customer header in Nginx 
+# Name of the custom HTTP header will be x-Served-By
+# Value will be the respective server
+
+sudo apt-get update
+sudo apt-get install nginx -y
+
+# Hello world page
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+# Redirect_me page to a youtube video
+sudo sed -i '/server_name _;/a \	location /redirect_me {\n		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n	}' /etc/nginx/sites-available/default
+
+# Custom 404
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+
+# Updating config for Nginx to use custom 404 page
+sudo sed -i '/server_name _;/a \        error_page 404 /custom_404.html;\n        location = /custom_404.html {\n                internal;\n        }' /etc/nginx/sites-available/default
+
+# Storing the hostname in a variable
+HOST=$(hostname)
+
+# Custom header to the Nginx config file
+sudo sed -i "/^http {/a \    add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+
+# Restart the webserver
+sudo service nginx restart
