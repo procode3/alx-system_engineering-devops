@@ -19,7 +19,7 @@ echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
 sudo sed -i '/server_name _;/a \        error_page 404 /custom_404.html;\n        location = /custom_404.html {\n                internal;\n        }' /etc/nginx/sites-available/default
 
 # Storing the hostname in a variable
-HOST=$(hostname)
+HOSTNAME=$(hostname)
 
 # Custom header to the Nginx config file
 sudo sed -i "/^http {/a \    add_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
