@@ -17,6 +17,10 @@ backend web-servers\n\
 ' /etc/haproxy/haproxy.cfg
 
 # Restart HAProxy and enable it on boot
-sudo systemctl restart haproxy
-sudo systemctl enable haproxy
+sudo /etc/init.d/haproxy start
 
+# set HAProxy to start at boot
+sudo update-rc.d haproxy defaults
+
+# reload HAProxy configuration
+sudo /etc/init.d/haproxy reload
