@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Fixing symbolic link
+
+rm /etc/nginx/sites-enabled/default
+
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+service nginx reload
+service nginx restart
