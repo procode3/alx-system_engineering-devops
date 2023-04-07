@@ -9,7 +9,7 @@ if [ "$#" == 1 ]
 then
     for s in "www" "lb-01" "web-01" "web-02"
     do
-        check_domain "$1" $s 
+        check_domain "$1" "$s" 
     done
 elif [ "$#" == 2 ]
 then
