@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#bash script that display info on subdomains
+
+check_domain () {
+    dig "$2.$1" | awk '/ANSWER\sSECTION/{getline;split($1,s,"."); print "The subdomain " s[1] " is a " $4 " record and points to "$5;}'
+    }
+
+if [ "$#" == 1 ]
+then
+    for s in "www" "lb-01" "web-01" "web-02"
+    do
+        check_domain "$1" $s 
+    done
+elif [ "$#" == 2 ]
+then
+    check_domain "$1" "$2"
+fi
