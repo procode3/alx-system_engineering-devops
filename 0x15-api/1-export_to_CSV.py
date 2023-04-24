@@ -10,7 +10,7 @@ if __name__ == "__main__":
     params = {'id': user_id}
     users_url = "https://jsonplaceholder.typicode.com/users"
     name_req = requests.get(users_url, params=params).json()
-    name = name_req[0].get("name")
+    name = name_req[0].get("username")
     fname = "{}.csv".format(user_id)
     params = {"userId": user_id}
     todos_url = "https://jsonplaceholder.typicode.com/todos"
