@@ -11,7 +11,7 @@ if __name__ == "__main__":
     name_req = requests.get(users_url).json()
     name = name_req.get("name")
 
-    params = {"userId": 2}
+    params = {"userId": int(user_id)}
     todos_url = "https://jsonplaceholder.typicode.com/todos"
     todo_list = requests.get(todos_url, params=params).json()
     completed = 0
