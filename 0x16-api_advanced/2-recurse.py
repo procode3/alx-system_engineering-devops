@@ -16,6 +16,5 @@ def recurse(subreddit, hot_list=[], after=""):
            "children") if res.status_code == 200 else None
     hot_list.append(data[0].get("data").get("title"))
     after = res.json().get("data").get("after")
-    print(data[0].get("data").get("title"))
     recurse(subreddit, hot_list, after)
     return hot_list
