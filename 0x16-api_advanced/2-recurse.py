@@ -12,9 +12,13 @@ def recurse(subreddit, hot_list=[], after=""):
     params = {"limit": 1, "after": after}
     res = requests.get(
               url, headers=headers, params=params, allow_redirects=False)
-    data = res.json().get("data").get(
-           "children") if res.status_code == 200 else None
-    hot_list.append(data[0].get("data").get("title"))
-    after = res.json().get("data").get("after")
-    recurse(subreddit, hot_list, after)
+    if res.status_code == 200:
+        data = res.json().get("data").get(
+               "children") if res.status_code == 200 else None
+        hot_list.append(data[0].get("data").get("title"))
+        after = res.json().get("data").get("after")
+        recurse(subreddit, hot_list, after)
+    else:
+        return None
+
     return hot_list
