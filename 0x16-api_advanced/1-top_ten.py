@@ -10,7 +10,9 @@ def top_ten(subreddit):
     params = {"limit": 10}
     res = requests.get(url, headers=headers, params=params)
     data = res.json().get("data").get(
-           "children") if res.status_code == 200 else 0
-    for _ in data:
-        print(_.get("data").get("title"))
-    return data
+           "children") if res.status_code == 200 else None
+    if data:
+        for _ in data:
+            print(_.get("data").get("title"))
+    else:
+        print (None)
