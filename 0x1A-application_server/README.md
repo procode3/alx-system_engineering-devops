@@ -1,6 +1,6 @@
 ## Application Server Concepts
 
-For this project, we expect you to look at these concepts:
+ The current project, covers the following concepts:
 
 - Web Server
 - Server
